@@ -1,0 +1,26 @@
+{
+  "name": "sumodal",
+  "version": "0.1.0",
+  "description": "Fight other sumos.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pebblecode/sumodal.git"
+  },
+  "keywords": [
+    "Sumo",
+    "Fight"
+  ],
+  "author": "Niall Henn, Sammy Isseyegh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pebblecode/sumodal/issues"
+  },
+  "homepage": "https://github.com/pebblecode/sumodal#readme",
+  "dependencies": {
+    "react": "^0.14.7"
+  }
+}
