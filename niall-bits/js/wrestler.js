@@ -27,7 +27,7 @@ Wrestler.prototype.move = function () {
 	domElement.style.left = this.position.position.x + 'px';
 	domElement.style.top = this.position.position.y + 'px';
 	domElement.style.transform = 'rotate(' + (180-this.angle) +'deg)';
-	
+
   this.position.position.x += this.direction.x;
   this.position.position.y += this.direction.y;
 }

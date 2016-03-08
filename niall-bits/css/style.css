@@ -34,6 +34,29 @@ body {
   position: absolute;
   left:0;
   top:0;
-  background: url('../img/wrestler.svg');
   display: block;
+
+  background: url('../img/smlsprite.png');
+  background-position: 0px 0px;
+
+  display: block;
+  transform: rotate(90deg);
+  transition: transform 0.2s;
+}
+
+
+.wrestler#wrestlerblue{
+  background: url('../img/smlblue.png');
+}
+
+.wrestler#wrestlerred{
+  background: url('../img/smlred.png');
+}
+
+.wrestler#wrestlerblack{
+  background: url('../img/smlblack.png');
+}
+
+.wrestler#wrestlergreen{
+  background: url('../img/smlgreen.png');
 }
