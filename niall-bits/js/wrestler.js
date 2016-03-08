@@ -8,6 +8,8 @@ function Wrestler (options) {
   this.direction = determineDirection(this.angle);
   this.state = 'START';
   this.position = determinePaperObj(this.colour);
+
+  this.domBG = 0;
   console.log(this.position);
 }
 
@@ -24,9 +26,16 @@ Wrestler.prototype.rotateRight = function() {
 Wrestler.prototype.move = function () {
 	var domElement = document.getElementById(this.id);
 
+   if(this.domBG < 6500){
+        this.domBG += 125;
+    } else {
+        this.domBG = 0;
+    }
+
 	domElement.style.left = this.position.position.x + 'px';
 	domElement.style.top = this.position.position.y + 'px';
 	domElement.style.transform = 'rotate(' + (180-this.angle) +'deg)';
+  domElement.style.backgroundPosition =  this.domBG + 'px' + ' 0px';
 
   this.position.position.x += this.direction.x;
   this.position.position.y += this.direction.y;
