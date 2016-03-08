@@ -8,21 +8,23 @@ socket.on('connect', function () {
 socket.on('playerJoined', function (data) {
 	var wrestler = document.createElement('DIV');
 
-	wrestler.setAttribute('id', 'wrestler-' + data);
+	wrestler.setAttribute('id', 'wrestler' + data);
 	wrestler.setAttribute('class', 'wrestler');
 
+	socket.wrestler = new Wrestler({colour: data});
+	wrestlers.push(socket.wrestler);
   document.getElementById('app').appendChild(wrestler);
 });
 
 socket.on('playerLeft', function(data) {
-	var wrestler = document.getElementById('wrestler-' + data);
+	var wrestler = document.getElementById('wrestler' + data);
   document.getElementById('app').removeChild(wrestler);
 });
 
 socket.on('action', function (data) {
   if (data.type === 'remoteAction') {
 	  data.movement === 'right' ? 
-	    rotateRight() :
-	    rotateLeft();
+	    socket.wrestler.rotateRight() :
+	    socket.wrestler.rotateLeft();
   };
 });

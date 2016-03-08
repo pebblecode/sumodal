@@ -8,13 +8,29 @@ paper.install(window);
 window.onload = function() {
   paper.setup('myCanvas');
   var tool = new Tool();
-  var wrestler = new Path.Rectangle([75, 75], [100, 100]);
-  // wrestler.strokeColor = 'black';
 
   view.onFrame = function(event) {
     var domWrestlers = document.getElementsByClassName('wrestler');
-    console.log(domWrestlers);
-    // On each frame, rotate the wrestler by 3 degrees:
+
+    // for (var i = 0; i < domWrestlers.length; i++) {
+    //   var w = domWrestlers[i];
+
+    //   for (var i = 0; i < wrestlers.length; i++) {
+    //     if (wrestlers[i].id === w.id) {
+    //         // move every frame in same direction.
+    //       wrestlers[i].paperjs = 
+    //       wrestlers[i].position.x += wrestlers[i].direction.x;
+    //       wrestlers[i].position.y += wrestlers[i].direction.y;
+    //     }
+    //   }
+    // }
+
+    for (var i = 0; i < wrestlers.length; i++) {
+        var wrestler = wrestlers[i];
+        wrestler.move();
+      }
+    // console.log(domWrestlers);
+
     // wrestlerPos.x += wDir.x;
     // wrestlerPos.y += wDir.y;
     // wrestler.position = wrestlerPos;
